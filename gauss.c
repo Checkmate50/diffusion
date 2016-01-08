@@ -20,7 +20,7 @@ int main() {
     double* vals, * avgs,* mean_sqr;
     int i, j, n, size, count;
 
-    size = 1000;
+    size = 10000;
     count = 10;
     vals = malloc(size*sizeof(double));
     avgs = malloc(count*sizeof(double));
@@ -55,7 +55,7 @@ double displacement(int n, double sig) {
     int i;
     double to_return = 0;
     for (i = 0; i < n; i++) {
-	to_return += gauss(sig, 10000);
+	to_return += gauss(sig, 1000);
     }
     return to_return;
 }
