@@ -14,29 +14,24 @@ double p(double x, double t, double D);
 int main() {
     FILE* ofile;
     int i, j;
-    double fidelity, range, sig, t;
+    double fidelity, range, sig, t, x;
 
     fidelity = 1;
-    range = 2;
+    range = 5;
     sig = 3;
     ofile = fopen("analytical_results.txt", "w");
 
     for (i = 0; i < 10; i++) {
 	t = 10*(i+1);
-	printf("For sig=%f\tt=%f\t\nx=\t", sig, t);
-	fprintf(ofile, "For sig=%f\tt=%f\t\nx=\t", sig, t);
+	printf("For sig=%f\tt=%f\t\n", sig, t);
+	fprintf(ofile, "For sig=%f\tt=%f\t\n", sig, t);
 	for (j = 0; j <= (int)2*range/fidelity; j++) {
-	    printf("%f\t", fidelity*j-range);
-	    fprintf(ofile, "%f\t", fidelity*j-range);
+	    x = fidelity*j-range;
+	    printf("x=%f\tp=%f\n", x, p(x, t, sig*sig/2));
+	    fprintf(ofile, "x=%f\tp=%f\n", x, p(x, t, sig*sig/2));
 	}
-	printf("\np(x)=\t");
-	fprintf(ofile, "\np(x)=\t");
-	for (j = 0; j <= (int)2*range/fidelity; j++) {
-	    printf("%f\t", p(fidelity*j-range, t, sig*sig/(2*t)));
-	    fprintf(ofile, "%f\t", p(fidelity*j-range, t, sig*sig/(2*t)));
-	}
-	printf("\n\n");
-	fprintf(ofile, "\n\n");
+	printf("\n");
+	fprintf(ofile, "\n");
     }
 
     fclose(ofile);
