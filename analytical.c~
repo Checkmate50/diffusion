@@ -1,0 +1,10 @@
+/*
+ *
+ * Written by Dietrich Geisler
+ * Last Modified 1/10/16
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <math.h>

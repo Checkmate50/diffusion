@@ -1,7 +1,7 @@
 /*
  *
  * Written by Dietrich Geisler
- * Last Modified 1/6/16
+ * Last Modified 1/7/16
  */
 
 #include <stdlib.h>
@@ -31,7 +31,7 @@ int main() {
     for (i = 0; i < count; i++) {
 	n = 10*(i +1);
 	for (j = 0; j < size; j++) {
-	    vals[j] = displacement(n, 1);
+	    vals[j] = displacement(n, 3);
 	}
 	avgs[i] = average(vals, size);
 	for (j = 0; j < size; j++) {
