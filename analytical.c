@@ -16,16 +16,16 @@ int main() {
     int i, j;
     double fidelity, range, sig, t, x;
 
-    fidelity = 1;
-    range = 5;
-    sig = 3;
+    fidelity = .1;
+    range = .5;
+    sig = .1;
     ofile = fopen("analytical_results.txt", "w");
 
     for (i = 0; i < 10; i++) {
 	t = 10*(i+1);
 	printf("For sig=%f\tt=%f\t\n", sig, t);
 	fprintf(ofile, "For sig=%f\tt=%f\t\n", sig, t);
-	for (j = 0; j <= (int)2*range/fidelity; j++) {
+	for (j = 0; j < (int)2*range/fidelity+1; j++) {
 	    x = fidelity*j-range;
 	    printf("x=%f\tp=%f\n", x, p(x, t, sig*sig/2));
 	    fprintf(ofile, "x=%f\tp=%f\n", x, p(x, t, sig*sig/2));
